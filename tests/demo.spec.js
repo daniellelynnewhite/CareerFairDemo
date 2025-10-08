@@ -107,7 +107,7 @@ test.describe('Demo', () => {
     await page.screenshot({ path: 'Karshner-Museum-salish-sea.png' });
   });
 
-  test.skip('goes to Native American Education webpage', async ({ page }) => {
+  test('goes to Native American Education webpage', async ({ page }) => {
     const title = await page.title();
     expect(title).toBe('Home - Puyallup School District');
 
@@ -116,7 +116,7 @@ test.describe('Demo', () => {
     await page.getByRole('heading', { name: 'Native American Education' }).click();
   });
 
-  test.skip('goes to Native American Education webpage - Slow for children to see each step', async ({ page }) => {
+  test('goes to Native American Education webpage - Slow for children to see each step', async ({ page }) => {
     const title = await page.title();
     expect(title).toBe('Home - Puyallup School District');
 
@@ -127,7 +127,7 @@ test.describe('Demo', () => {
     await page.getByRole('heading', { name: 'Native American Education' }).click();
   });
 
-  test.skip('goes to the Arts Program webpage', async ({ page }) => {
+  test('goes to the Arts Program webpage', async ({ page }) => {
     const title = await page.title();
     expect(title).toBe('Home - Puyallup School District');
 
@@ -138,11 +138,10 @@ test.describe('Demo', () => {
     await page.getByRole('link', { name: 'View More Events' }).click();
     const page1 = await page1Promise;
     await page1.getByRole('heading', { name: 'The ARTS in Puyallup: LIVE!' }).click();
-    await page1.getByRole('link', { name: 'Hunt Elementary Orchestra and' }).click();
     await page1.screenshot({ path: 'Hunt-Elementary-Schedule.png' });
   });
 
-  test.skip('goes to the Arts Program webpage - Slow for children to see each step', async ({ page }) => {
+  test('goes to the Arts Program webpage - Slow for children to see each step', async ({ page }) => {
     const title = await page.title();
     expect(title).toBe('Home - Puyallup School District');
 
@@ -156,12 +155,11 @@ test.describe('Demo', () => {
     await page.waitForTimeout(2000);
     const page1 = await page1Promise;
     await page1.getByRole('heading', { name: 'The ARTS in Puyallup: LIVE!' }).click();
-    await page1.getByRole('link', { name: 'Hunt Elementary Orchestra and' }).click();
     await page.waitForTimeout(2000);
     await page1.screenshot({ path: 'Hunt-Elementary-Schedule.png' });
   });
 
-  test.skip('goes to the Technology webpage', async ({ page }) => {
+  test('goes to the Technology webpage', async ({ page }) => {
     const title = await page.title();
     expect(title).toBe('Home - Puyallup School District');
 
@@ -172,12 +170,9 @@ test.describe('Demo', () => {
     await page1.getByText('Read More about Cybersecurity').click();
     await page1.screenshot({ path: 'Cybersecurity.png' });
     await page1.getByRole('button', { name: 'Close' }).click();
-    await page1.getByText('Read More about Student').click();
-    await page1.screenshot({ path: 'Student-Regulations.png' });
-    await page1.getByRole('button', { name: 'Close' }).click();
   });
 
-  test.skip('goes to the Technology webpage - Slow for children to see each step', async ({ page }) => {
+  test('goes to the Technology webpage - Slow for children to see each step', async ({ page }) => {
     const title = await page.title();
     expect(title).toBe('Home - Puyallup School District');
 
@@ -190,10 +185,6 @@ test.describe('Demo', () => {
     await page1.getByText('Read More about Cybersecurity').click();
     await page.waitForTimeout(2000);
     await page1.screenshot({ path: 'Cybersecurity.png' });
-    await page1.getByRole('button', { name: 'Close' }).click();
-    await page1.getByText('Read More about Student').click();
-    await page.waitForTimeout(2000);
-    await page1.screenshot({ path: 'Student-Regulations.png' });
     await page1.getByRole('button', { name: 'Close' }).click();
   });
 });
