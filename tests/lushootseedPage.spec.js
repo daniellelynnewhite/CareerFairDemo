@@ -1,11 +1,12 @@
 import { test, expect } from '@playwright/test';
+import { homepageIsLoaded } from './helperFunctions.js';
 
-// command to run: npx playwright test demo.spec.js
-// command to run with UI visible: npx playwright test demo.spec.js --debug
+// command to run: npx playwright test lushootseedPage.spec.js
+// command to run with UI visible: npx playwright test lushootseedPage.spec.js --debug
 
-test.describe('Demo', () => {
+test.describe('lushootseedPage', () => {
   test.beforeEach('before test', async ({ page }) => {
-    await page.goto('https://www.puyallupsd.org/');
+    await homepageIsLoaded(page);
   });
 
   test.afterEach('after test', async ({ page }) => {
@@ -13,9 +14,6 @@ test.describe('Demo', () => {
   });
 
   test('goes to Lushootseed Info Page', async ({ page }) => {
-    const title = await page.title();
-    expect(title).toBe('Home - Puyallup School District');
-
     await page.getByRole('menuitem', { name: 'About Us' }).hover();
     await page.getByRole('menuitem', { name: 'Land Acknowledgement' }).click();
     await page.getByRole('link', { name: 'Lushootseed' }).click();
@@ -24,10 +22,6 @@ test.describe('Demo', () => {
   });
 
   test('goes to Lushootseed Info Page - Slow for children to see each step', async ({ page }) => {
-    const title = await page.title();
-    expect(title).toBe('Home - Puyallup School District');
-    await page.waitForTimeout(3000);
-
     await page.getByRole('link', { name: 'About Us' }).hover();
     await page.waitForTimeout(1000);
     await page.getByLabel('main').getByText('Land Acknowledgement').click();
