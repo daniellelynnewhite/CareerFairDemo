@@ -1,11 +1,12 @@
-import { test, expect } from '@playwright/test';
+import { test } from '@playwright/test';
+import { homepageIsLoaded } from './helperFunctions.js';
 
-// command to run: npx playwright test demo.spec.js
-// command to run with UI visible: npx playwright test demo.spec.js --debug
+// command to run: npx playwright test technologyPage.spec.js
+// command to run with UI visible: npx playwright test technologyPage.spec.js --debug
 
-test.describe('Demo', () => {
+test.describe('technologyPage', () => {
   test.beforeEach('before test', async ({ page }) => {
-    await page.goto('https://www.puyallupsd.org/');
+    await homepageIsLoaded(page);
   });
 
   test.afterEach('after test', async ({ page }) => {
@@ -13,9 +14,6 @@ test.describe('Demo', () => {
   });
 
   test('goes to the Technology webpage', async ({ page }) => {
-    const title = await page.title();
-    expect(title).toBe('Home - Puyallup School District');
-
     await page.getByRole('link', { name: 'Services', exact: true }).hover();
     const page1Promise = page.waitForEvent('popup');
     await page.getByLabel('main').getByText('Technology(opens in new').click();
@@ -26,9 +24,6 @@ test.describe('Demo', () => {
   });
 
   test('goes to the Technology webpage - Slow for children to see each step', async ({ page }) => {
-    const title = await page.title();
-    expect(title).toBe('Home - Puyallup School District');
-
     await page.getByRole('link', { name: 'Services', exact: true }).hover();
     await page.waitForTimeout(1000);
     const page1Promise = page.waitForEvent('popup');

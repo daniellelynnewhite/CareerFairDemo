@@ -1,11 +1,12 @@
-import { test, expect } from '@playwright/test';
+import { test } from '@playwright/test';
+import { homepageIsLoaded } from './helperFunctions.js';
 
-// command to run: npx playwright test demo.spec.js
-// command to run with UI visible: npx playwright test demo.spec.js --debug
+// command to run: npx playwright test homepage.spec.js
+// command to run with UI visible: npx playwright test homepage.spec.js --debug
 
-test.describe('Demo', () => {
+test.describe('homepage', () => {
   test.beforeEach('before test', async ({ page }) => {
-    await page.goto('https://www.puyallupsd.org/');
+    await homepageIsLoaded(page);
   });
 
   test.afterEach('after test', async ({ page }) => {
@@ -13,10 +14,6 @@ test.describe('Demo', () => {
   });
 
   test('screenshot of the homepage', async ({ page }) => {
-    const title = await page.title();
-    expect(title).toBe('Home - Puyallup School District');
-    await page.waitForTimeout(2000);
-
     await page.screenshot({ path: 'puyallup-homepage.png' });
   });
 });
