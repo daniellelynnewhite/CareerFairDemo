@@ -31,7 +31,7 @@ test.describe('technologyPage', () => {
     await page.waitForTimeout(2000);
     const page1 = await page1Promise;
     await page1.getByText('Read More about Cybersecurity').click();
-    await page.waitForTimeout(2000);
+    await page1.waitForTimeout(2000);
     await page1.screenshot({ path: 'Cybersecurity.png' });
     await page1.getByRole('button', { name: 'Close' }).click();
   });
