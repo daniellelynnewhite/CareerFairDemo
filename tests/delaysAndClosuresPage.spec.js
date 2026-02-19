@@ -4,6 +4,8 @@ import { homepageIsLoaded } from './helperFunctions.js';
 // command to run: npx playwright test delaysAndClosuresPage.spec.js
 // command to run with UI visible: npx playwright test delaysAndClosuresPage.spec.js --debug
 
+// TODO: Refactor Test Validation into functions to reduce code repetition and make tests more readable.
+
 test.describe('delaysAndClosuresPage', () => {
   test.beforeEach('before test', async ({ page }) => {
     await homepageIsLoaded(page);
