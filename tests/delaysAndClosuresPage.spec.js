@@ -36,7 +36,7 @@ test.describe('delaysAndClosuresPage', () => {
     expect(await page.getByRole('heading', { name: 'Search' })).toBeVisible();
   });
 
-  test.skip('goes to Delays and Closures Info Page - Search Hunt', async ({ page }) => {
+  test('goes to Delays and Closures Info Page - Search Hunt', async ({ page }) => {
     await page.getByRole('link', { name: 'Families' }).first().hover();
     await page.getByRole('link', { name: 'School Closures and Delays' }).click();
     await page.getByRole('tab', { name: 'Elementary' }).click();
@@ -54,7 +54,7 @@ test.describe('delaysAndClosuresPage', () => {
     expect(await page.getByRole('link', { name: 'Hunt Elementary - 406' })).toBeVisible();
   });
 
-  test.skip('goes to Delays and Closures Info Page - Search Hunt - Slow for children to see each step', async ({ page }) => {
+  test('goes to Delays and Closures Info Page - Search Hunt - Slow for children to see each step', async ({ page }) => {
     await page.getByRole('link', { name: 'Families' }).first().hover();
     await page.waitForTimeout(1000);
     await page.getByRole('link', { name: 'School Closures and Delays' }).click();
@@ -76,7 +76,7 @@ test.describe('delaysAndClosuresPage', () => {
     expect(await page.getByRole('link', { name: 'Hunt Elementary - 406' })).toBeVisible();
   });
 
-  test.skip('goes to Delays and Closures Info Page - Search Filter Hunt Elementary', async ({ page }) => {
+  test('goes to Delays and Closures Info Page - Search Filter Hunt Elementary', async ({ page }) => {
     await page.getByRole('link', { name: 'Families' }).first().hover();
     await page.getByRole('link', { name: 'School Closures and Delays' }).click();
     await page.getByRole('tab', { name: 'Elementary' }).click();
@@ -92,7 +92,7 @@ test.describe('delaysAndClosuresPage', () => {
     expect(await page.getByRole('link', { name: 'Hunt Elementary - 406' })).toBeVisible();
   });
 
-  test.skip('goes to Delays and Closures Info Page - Search Filter Hunt Elementary Bus Route 420', async ({ page }) => {
+  test('goes to Delays and Closures Info Page - Search Filter Hunt Elementary Bus Route 420', async ({ page }) => {
     await page.getByRole('link', { name: 'Families' }).first().hover();
     await page.getByRole('link', { name: 'School Closures and Delays' }).click();
     await page.getByRole('tab', { name: 'Elementary' }).click();
@@ -105,7 +105,7 @@ test.describe('delaysAndClosuresPage', () => {
     await page.screenshot({ path: 'Bus-Route-420.png' });
   });
 
-  test.skip('goes to Delays and Closures Info Page - Click Facebook Link', async ({ page }) => {
+  test('goes to Delays and Closures Info Page - Click Facebook Link', async ({ page }) => {
     await page.getByRole('link', { name: 'Families' }).first().hover();
     await page.getByRole('link', { name: 'School Closures and Delays' }).click();
     await page.getByRole('heading', { name: 'Inclement Weather' }).click();
@@ -117,7 +117,7 @@ test.describe('delaysAndClosuresPage', () => {
     await page1.getByRole('button', { name: 'Close' }).click();
   });
 
-  test.skip('goes to Delays and Closures Info Page - Click Instagram Link', async ({ page }) => {
+  test('goes to Delays and Closures Info Page - Click Instagram Link', async ({ page }) => {
     await page.getByRole('link', { name: 'Families' }).first().hover();
     await page.getByRole('link', { name: 'School Closures and Delays' }).click();
     await page.getByRole('heading', { name: 'Inclement Weather' }).click();
@@ -129,7 +129,7 @@ test.describe('delaysAndClosuresPage', () => {
     await page1.getByRole('button', { name: 'Close' }).click();
   });
 
-  test.skip('goes to Delays and Closures Info Page - School Closure and Delay Scenarios Accordians', async ({ page }) => {
+  test('goes to Delays and Closures Info Page - School Closure and Delay Scenarios Accordians', async ({ page }) => {
     await page.getByRole('link', { name: 'Families' }).first().hover();
     await page.getByRole('link', { name: 'School Closures and Delays' }).click();
     await page.getByRole('heading', { name: 'Inclement Weather' }).click();
