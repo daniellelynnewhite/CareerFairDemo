@@ -15,7 +15,7 @@ test.describe('artsProgramPage', () => {
     await page.close();
   });
 
-  test.skip('goes to the Arts Program webpage - Validate Loads Event Calendar', async ({ page }) => {
+  test('goes to the Arts Program webpage - Validate Loads Event Calendar', async ({ page }) => {
     await page.getByRole('link', { name: 'Academic Programs' }).hover();
     await page.getByRole('link', { name: 'Arts Program' }).click();
     expect(await page.getByRole('heading', { name: 'Arts Program' })).toBeVisible();
@@ -30,7 +30,7 @@ test.describe('artsProgramPage', () => {
     await page1.screenshot({ path: 'Hunt-Elementary-Art-Schedule.png' });
   });
 
-  test.skip('goes to the Arts Program webpage - Validate Loads Event Calendar - Slow for children to see each step', async ({ page }) => {
+  test('goes to the Arts Program webpage - Validate Loads Event Calendar - Slow for children to see each step', async ({ page }) => {
     await page.getByRole('link', { name: 'Academic Programs' }).hover();
     await page.waitForTimeout(1000);
     await page.getByRole('link', { name: 'Arts Program' }).click();
@@ -49,7 +49,7 @@ test.describe('artsProgramPage', () => {
     await page1.screenshot({ path: 'Hunt-Elementary-Art-Schedule.png' });
   });
 
-  test.skip('goes to the Arts Program webpage - Empty Bowls Link', async ({ page }) => {
+  test('goes to the Arts Program webpage - Empty Bowls Link', async ({ page }) => {
     await page.getByRole('link', { name: 'Academic Programs' }).hover();
     await page.getByRole('link', { name: 'Arts Program' }).click();
     expect(await page.getByRole('heading', { name: 'Arts Program' })).toBeVisible();
@@ -66,7 +66,7 @@ test.describe('artsProgramPage', () => {
     await page.screenshot({ path: 'Empty-Bowls-Puyallup.png' });
   });
 
-  test.skip('goes to the Arts Program webpage - History of the Vesey/Munson Link', async ({ page }) => {
+  test('goes to the Arts Program webpage - History of the Vesey/Munson Link', async ({ page }) => {
     await page.getByRole('link', { name: 'Academic Programs' }).hover();
     await page.getByRole('link', { name: 'Arts Program' }).click();
     expect(await page.getByRole('heading', { name: 'Arts Program' })).toBeVisible();
@@ -92,7 +92,7 @@ test.describe('artsProgramPage', () => {
     expect(await page1.getByRole('heading', { name: 'Photography/Digital' })).toBeVisible();
   });
 
-  test.skip('goes to the Arts Program webpage - Music, Theatre, and Visual Link Loads', async ({ page }) => {
+  test('goes to the Arts Program webpage - Music, Theatre, and Visual Link Loads', async ({ page }) => {
     await page.getByRole('link', { name: 'Academic Programs' }).hover();
     await page.getByRole('link', { name: 'Arts Program' }).click();
     expect(await page.getByRole('heading', { name: 'Arts Program' })).toBeVisible();
@@ -120,7 +120,7 @@ test.describe('artsProgramPage', () => {
     expect(await page.getByRole('button', { name: 'Hammond Ashley Violins' })).toBeVisible();
   });
 
-  test.skip('goes to the Arts Program webpage - Music, Theatre, and Visual Link Loads - Click Band (Grades 5-12)', async ({ page }) => {
+  test('goes to the Arts Program webpage - Music, Theatre, and Visual Link Loads - Click Band (Grades 5-12)', async ({ page }) => {
     await page.getByRole('link', { name: 'Academic Programs' }).hover();
     await page.getByRole('link', { name: 'Arts Program' }).click();
     expect(await page.getByRole('heading', { name: 'Arts Program' })).toBeVisible();
@@ -154,7 +154,7 @@ test.describe('artsProgramPage', () => {
     expect(await page.getByText('Trumpet', { exact: true })).toBeVisible();
   });
 
-  test.skip('goes to the Arts Program webpage - Music, Theatre, and Visual Link Loads - Click Choir (Grades 7-12)', async ({ page }) => {
+  test('goes to the Arts Program webpage - Music, Theatre, and Visual Link Loads - Click Choir (Grades 7-12)', async ({ page }) => {
     await page.getByRole('link', { name: 'Academic Programs' }).hover();
     await page.getByRole('link', { name: 'Arts Program' }).click();
     expect(await page.getByRole('heading', { name: 'Arts Program' })).toBeVisible();
@@ -184,7 +184,7 @@ test.describe('artsProgramPage', () => {
     expect(await page.getByText('The Puyallup School District offers a continuous choir pathway for students in')).toBeVisible();
   });
 
-  test.skip('goes to the Arts Program webpage - Music, Theatre, and Visual Link Loads - Click General Elementary Music (Grades K-6)', async ({ page }) => {
+  test('goes to the Arts Program webpage - Music, Theatre, and Visual Link Loads - Click General Elementary Music (Grades K-6)', async ({ page }) => {
     await page.getByRole('link', { name: 'Academic Programs' }).hover();
     await page.getByRole('link', { name: 'Arts Program' }).click();
     expect(await page.getByRole('heading', { name: 'Arts Program' })).toBeVisible();
@@ -224,7 +224,7 @@ test.describe('artsProgramPage', () => {
     await expect(page1).toHaveURL("https://www.quavered.com/music/curriculum-overview/");
   });
 
-  test.skip('goes to the Arts Program webpage - Music, Theatre, and Visual Link Loads - Click Orchestra (Grades 5-12)', async ({ page }) => {
+  test('goes to the Arts Program webpage - Music, Theatre, and Visual Link Loads - Click Orchestra (Grades 5-12)', async ({ page }) => {
     await page.getByRole('link', { name: 'Academic Programs' }).hover();
     await page.getByRole('link', { name: 'Arts Program' }).click();
     expect(await page.getByRole('heading', { name: 'Arts Program' })).toBeVisible();
@@ -258,7 +258,7 @@ test.describe('artsProgramPage', () => {
     expect(await page.getByText('Violin', { exact: true })).toBeVisible();
   });
 
-  test.skip('goes to the Arts Program webpage - Music, Theatre, and Visual Link Loads - Theatre (Grades 7-12)', async ({ page }) => {
+  test('goes to the Arts Program webpage - Music, Theatre, and Visual Link Loads - Theatre (Grades 7-12)', async ({ page }) => {
     await page.getByRole('link', { name: 'Academic Programs' }).hover();
     await page.getByRole('link', { name: 'Arts Program' }).click();
     expect(await page.getByRole('heading', { name: 'Arts Program' })).toBeVisible();
@@ -285,6 +285,211 @@ test.describe('artsProgramPage', () => {
     expect(await page.getByRole('button', { name: 'Applebaum Violin Shop' })).toBeVisible();
     expect(await page.getByRole('button', { name: 'Hammond Ashley Violins' })).toBeVisible();
     await page.getByRole('button', { name: 'Theatre (Grades 7-12)' }).click();
-    await page.pause()
+    expect(await page.getByText('PSD Drama classes foster')).toBeVisible();
+  });
+
+  test('goes to the Arts Program webpage - Music, Theatre, and Visual Link Loads - Visual Arts (Grades 7-12)', async ({ page }) => {
+    await page.getByRole('link', { name: 'Academic Programs' }).hover();
+    await page.getByRole('link', { name: 'Arts Program' }).click();
+    expect(await page.getByRole('heading', { name: 'Arts Program' })).toBeVisible();
+    expect(await page.getByRole('heading', { name: 'Vision Statement' })).toBeVisible();
+    expect(await page.getByRole('heading', { name: 'Follow Us on Social Media!' })).toBeVisible();
+    expect(await page.getByRole('heading', { name: 'Upcoming Events' })).toBeVisible();
+    expect(await page.getByRole('heading', { name: 'Arts Program' })).toBeVisible();
+    await page.getByRole('link', { name: 'Music, Theatre, and Visual' }).click();
+    await page.getByText('Programs Across the District').click();
+    expect(await page.getByRole('heading', { name: 'Music, Theatre, and Visual' })).toBeVisible();
+    expect(await page.getByRole('heading', { name: 'Overview' })).toBeVisible();
+    expect(await page.getByText('Programs Across the District')).toBeVisible();
+    expect(await page.getByText('Instrument Rentals')).toBeVisible();
+    expect(await page.getByRole('heading', { name: 'Resources' })).toBeVisible();
+    expect(await page.getByRole('button', { name: 'Band (Grades 5-12)' })).toBeVisible();
+    expect(await page.getByRole('button', { name: 'Choir (Grades 7-12)' })).toBeVisible();
+    expect(await page.getByRole('button', { name: 'General Elementary Music (' })).toBeVisible();
+    expect(await page.getByRole('button', { name: 'Orchestra (Grades 5-12)' })).toBeVisible();
+    expect(await page.getByRole('button', { name: 'Theatre (Grades 7-12)' })).toBeVisible();
+    expect(await page.getByRole('button', { name: 'Visual Arts (Grades 7-12)' })).toBeVisible();
+    expect(await page.getByRole('button', { name: 'String Instrument Sizing Guide' })).toBeVisible();
+    expect(await page.getByRole('button', { name: 'Ted Brown Music Rentals' })).toBeVisible();
+    expect(await page.getByRole('button', { name: 'Music & Arts Rentals' })).toBeVisible();
+    expect(await page.getByRole('button', { name: 'Applebaum Violin Shop' })).toBeVisible();
+    expect(await page.getByRole('button', { name: 'Hammond Ashley Violins' })).toBeVisible();
+    await page.getByRole('button', { name: 'Visual Arts (Grades 7-12)' }).click();
+    expect(await page.getByText('In Puyallup, our visual arts')).toBeVisible();
+  });
+
+  test('goes to the Arts Program webpage - Music, Theatre, and Visual Link Loads - String Instrument Sizing Guide', async ({ page }) => {
+    await page.getByRole('link', { name: 'Academic Programs' }).hover();
+    await page.getByRole('link', { name: 'Arts Program' }).click();
+    expect(await page.getByRole('heading', { name: 'Arts Program' })).toBeVisible();
+    expect(await page.getByRole('heading', { name: 'Vision Statement' })).toBeVisible();
+    expect(await page.getByRole('heading', { name: 'Follow Us on Social Media!' })).toBeVisible();
+    expect(await page.getByRole('heading', { name: 'Upcoming Events' })).toBeVisible();
+    expect(await page.getByRole('heading', { name: 'Arts Program' })).toBeVisible();
+    await page.getByRole('link', { name: 'Music, Theatre, and Visual' }).click();
+    await page.getByText('Programs Across the District').click();
+    expect(await page.getByRole('heading', { name: 'Music, Theatre, and Visual' })).toBeVisible();
+    expect(await page.getByRole('heading', { name: 'Overview' })).toBeVisible();
+    expect(await page.getByText('Programs Across the District')).toBeVisible();
+    expect(await page.getByText('Instrument Rentals')).toBeVisible();
+    expect(await page.getByRole('heading', { name: 'Resources' })).toBeVisible();
+    expect(await page.getByRole('button', { name: 'Band (Grades 5-12)' })).toBeVisible();
+    expect(await page.getByRole('button', { name: 'Choir (Grades 7-12)' })).toBeVisible();
+    expect(await page.getByRole('button', { name: 'General Elementary Music (' })).toBeVisible();
+    expect(await page.getByRole('button', { name: 'Orchestra (Grades 5-12)' })).toBeVisible();
+    expect(await page.getByRole('button', { name: 'Theatre (Grades 7-12)' })).toBeVisible();
+    expect(await page.getByRole('button', { name: 'Visual Arts (Grades 7-12)' })).toBeVisible();
+    expect(await page.getByRole('button', { name: 'String Instrument Sizing Guide' })).toBeVisible();
+    expect(await page.getByRole('button', { name: 'Ted Brown Music Rentals' })).toBeVisible();
+    expect(await page.getByRole('button', { name: 'Music & Arts Rentals' })).toBeVisible();
+    expect(await page.getByRole('button', { name: 'Applebaum Violin Shop' })).toBeVisible();
+    expect(await page.getByRole('button', { name: 'Hammond Ashley Violins' })).toBeVisible();
+    await page.getByRole('button', { name: 'String Instrument Sizing Guide' }).click();
+    const firstTable = await page.locator('//div[contains(@class, "table-overflow")]').first();
+    expect(firstTable).toBeVisible();
+    await firstTable.screenshot({ path: 'string-instrument-sizing-guide-first-table.png' });
+    const secondTable = await page.locator('//div[contains(@class, "table-overflow")]').nth(1);
+    expect(secondTable).toBeVisible();
+    await secondTable.screenshot({ path: 'string-instrument-sizing-guide-second-table.png' });
+    const thirdTable = await page.locator('//div[contains(@class, "table-overflow")]').nth(2);
+    expect(thirdTable).toBeVisible();
+    await thirdTable.screenshot({ path: 'string-instrument-sizing-guide-third-table.png' });
+    const fourthTable = await page.locator('//div[contains(@class, "table-overflow")]').nth(3);
+    expect(fourthTable).toBeVisible();
+    await fourthTable.screenshot({ path: 'string-instrument-sizing-guide-fourth-table.png' });
+  });
+
+  test('goes to the Arts Program webpage - Music, Theatre, and Visual Link Loads - Ted Brown Music Rentals', async ({ page }) => {
+    await page.getByRole('link', { name: 'Academic Programs' }).hover();
+    await page.getByRole('link', { name: 'Arts Program' }).click();
+    expect(await page.getByRole('heading', { name: 'Arts Program' })).toBeVisible();
+    expect(await page.getByRole('heading', { name: 'Vision Statement' })).toBeVisible();
+    expect(await page.getByRole('heading', { name: 'Follow Us on Social Media!' })).toBeVisible();
+    expect(await page.getByRole('heading', { name: 'Upcoming Events' })).toBeVisible();
+    expect(await page.getByRole('heading', { name: 'Arts Program' })).toBeVisible();
+    await page.getByRole('link', { name: 'Music, Theatre, and Visual' }).click();
+    await page.getByText('Programs Across the District').click();
+    expect(await page.getByRole('heading', { name: 'Music, Theatre, and Visual' })).toBeVisible();
+    expect(await page.getByRole('heading', { name: 'Overview' })).toBeVisible();
+    expect(await page.getByText('Programs Across the District')).toBeVisible();
+    expect(await page.getByText('Instrument Rentals')).toBeVisible();
+    expect(await page.getByRole('heading', { name: 'Resources' })).toBeVisible();
+    expect(await page.getByRole('button', { name: 'Band (Grades 5-12)' })).toBeVisible();
+    expect(await page.getByRole('button', { name: 'Choir (Grades 7-12)' })).toBeVisible();
+    expect(await page.getByRole('button', { name: 'General Elementary Music (' })).toBeVisible();
+    expect(await page.getByRole('button', { name: 'Orchestra (Grades 5-12)' })).toBeVisible();
+    expect(await page.getByRole('button', { name: 'Theatre (Grades 7-12)' })).toBeVisible();
+    expect(await page.getByRole('button', { name: 'Visual Arts (Grades 7-12)' })).toBeVisible();
+    expect(await page.getByRole('button', { name: 'String Instrument Sizing Guide' })).toBeVisible();
+    expect(await page.getByRole('button', { name: 'Ted Brown Music Rentals' })).toBeVisible();
+    expect(await page.getByRole('button', { name: 'Music & Arts Rentals' })).toBeVisible();
+    expect(await page.getByRole('button', { name: 'Applebaum Violin Shop' })).toBeVisible();
+    expect(await page.getByRole('button', { name: 'Hammond Ashley Violins' })).toBeVisible();
+    await page.getByRole('button', { name: 'Ted Brown Music Rentals' }).click();
+    const page1Promise = page.waitForEvent('popup');
+    await page.getByRole('link', { name: 'begin the online rental' }).click();
+    const page1 = await page1Promise;
+    // page1 doesn't load correctly here, so it currently can't be validated. This is an issue with the website, not the test.
+  });
+
+  test('goes to the Arts Program webpage - Music, Theatre, and Visual Link Loads - Music & Arts Rentals', async ({ page }) => {
+    await page.getByRole('link', { name: 'Academic Programs' }).hover();
+    await page.getByRole('link', { name: 'Arts Program' }).click();
+    expect(await page.getByRole('heading', { name: 'Arts Program' })).toBeVisible();
+    expect(await page.getByRole('heading', { name: 'Vision Statement' })).toBeVisible();
+    expect(await page.getByRole('heading', { name: 'Follow Us on Social Media!' })).toBeVisible();
+    expect(await page.getByRole('heading', { name: 'Upcoming Events' })).toBeVisible();
+    expect(await page.getByRole('heading', { name: 'Arts Program' })).toBeVisible();
+    await page.getByRole('link', { name: 'Music, Theatre, and Visual' }).click();
+    await page.getByText('Programs Across the District').click();
+    expect(await page.getByRole('heading', { name: 'Music, Theatre, and Visual' })).toBeVisible();
+    expect(await page.getByRole('heading', { name: 'Overview' })).toBeVisible();
+    expect(await page.getByText('Programs Across the District')).toBeVisible();
+    expect(await page.getByText('Instrument Rentals')).toBeVisible();
+    expect(await page.getByRole('heading', { name: 'Resources' })).toBeVisible();
+    expect(await page.getByRole('button', { name: 'Band (Grades 5-12)' })).toBeVisible();
+    expect(await page.getByRole('button', { name: 'Choir (Grades 7-12)' })).toBeVisible();
+    expect(await page.getByRole('button', { name: 'General Elementary Music (' })).toBeVisible();
+    expect(await page.getByRole('button', { name: 'Orchestra (Grades 5-12)' })).toBeVisible();
+    expect(await page.getByRole('button', { name: 'Theatre (Grades 7-12)' })).toBeVisible();
+    expect(await page.getByRole('button', { name: 'Visual Arts (Grades 7-12)' })).toBeVisible();
+    expect(await page.getByRole('button', { name: 'String Instrument Sizing Guide' })).toBeVisible();
+    expect(await page.getByRole('button', { name: 'Ted Brown Music Rentals' })).toBeVisible();
+    expect(await page.getByRole('button', { name: 'Music & Arts Rentals' })).toBeVisible();
+    expect(await page.getByRole('button', { name: 'Applebaum Violin Shop' })).toBeVisible();
+    expect(await page.getByRole('button', { name: 'Hammond Ashley Violins' })).toBeVisible();
+    await page.getByRole('button', { name: 'Music & Arts Rentals' }).click();
+    const page1Promise = page.waitForEvent('popup');
+    await page.getByRole('link', { name: 'begin the online rental' }).click();
+    const page1 = await page1Promise;
+    await expect(page1).toHaveURL("https://www.musicarts.com/rentals");
+  });
+
+  test('goes to the Arts Program webpage - Music, Theatre, and Visual Link Loads - Applebaum Violin Shop', async ({ page }) => {
+    await page.getByRole('link', { name: 'Academic Programs' }).hover();
+    await page.getByRole('link', { name: 'Arts Program' }).click();
+    expect(await page.getByRole('heading', { name: 'Arts Program' })).toBeVisible();
+    expect(await page.getByRole('heading', { name: 'Vision Statement' })).toBeVisible();
+    expect(await page.getByRole('heading', { name: 'Follow Us on Social Media!' })).toBeVisible();
+    expect(await page.getByRole('heading', { name: 'Upcoming Events' })).toBeVisible();
+    expect(await page.getByRole('heading', { name: 'Arts Program' })).toBeVisible();
+    await page.getByRole('link', { name: 'Music, Theatre, and Visual' }).click();
+    await page.getByText('Programs Across the District').click();
+    expect(await page.getByRole('heading', { name: 'Music, Theatre, and Visual' })).toBeVisible();
+    expect(await page.getByRole('heading', { name: 'Overview' })).toBeVisible();
+    expect(await page.getByText('Programs Across the District')).toBeVisible();
+    expect(await page.getByText('Instrument Rentals')).toBeVisible();
+    expect(await page.getByRole('heading', { name: 'Resources' })).toBeVisible();
+    expect(await page.getByRole('button', { name: 'Band (Grades 5-12)' })).toBeVisible();
+    expect(await page.getByRole('button', { name: 'Choir (Grades 7-12)' })).toBeVisible();
+    expect(await page.getByRole('button', { name: 'General Elementary Music (' })).toBeVisible();
+    expect(await page.getByRole('button', { name: 'Orchestra (Grades 5-12)' })).toBeVisible();
+    expect(await page.getByRole('button', { name: 'Theatre (Grades 7-12)' })).toBeVisible();
+    expect(await page.getByRole('button', { name: 'Visual Arts (Grades 7-12)' })).toBeVisible();
+    expect(await page.getByRole('button', { name: 'String Instrument Sizing Guide' })).toBeVisible();
+    expect(await page.getByRole('button', { name: 'Ted Brown Music Rentals' })).toBeVisible();
+    expect(await page.getByRole('button', { name: 'Music & Arts Rentals' })).toBeVisible();
+    expect(await page.getByRole('button', { name: 'Applebaum Violin Shop' })).toBeVisible();
+    expect(await page.getByRole('button', { name: 'Hammond Ashley Violins' })).toBeVisible();
+    await page.getByRole('button', { name: 'Applebaum Violin Shop' }).click();
+    expect(await page.getByText('Pacific Ave, Tacoma, WA 98402')).toBeVisible();
+    const page1Promise = page.waitForEvent('popup');
+    await page.getByRole('link', { name: 'Learn more about Rentals and' }).click();
+    const page1 = await page1Promise;
+    await expect(page1).toHaveURL("https://www.applebaumviolinshop.com/rent");
+  });
+
+  test('goes to the Arts Program webpage - Music, Theatre, and Visual Link Loads - Hammond Ashley Violins', async ({ page }) => {
+    await page.getByRole('link', { name: 'Academic Programs' }).hover();
+    await page.getByRole('link', { name: 'Arts Program' }).click();
+    expect(await page.getByRole('heading', { name: 'Arts Program' })).toBeVisible();
+    expect(await page.getByRole('heading', { name: 'Vision Statement' })).toBeVisible();
+    expect(await page.getByRole('heading', { name: 'Follow Us on Social Media!' })).toBeVisible();
+    expect(await page.getByRole('heading', { name: 'Upcoming Events' })).toBeVisible();
+    expect(await page.getByRole('heading', { name: 'Arts Program' })).toBeVisible();
+    await page.getByRole('link', { name: 'Music, Theatre, and Visual' }).click();
+    await page.getByText('Programs Across the District').click();
+    expect(await page.getByRole('heading', { name: 'Music, Theatre, and Visual' })).toBeVisible();
+    expect(await page.getByRole('heading', { name: 'Overview' })).toBeVisible();
+    expect(await page.getByText('Programs Across the District')).toBeVisible();
+    expect(await page.getByText('Instrument Rentals')).toBeVisible();
+    expect(await page.getByRole('heading', { name: 'Resources' })).toBeVisible();
+    expect(await page.getByRole('button', { name: 'Band (Grades 5-12)' })).toBeVisible();
+    expect(await page.getByRole('button', { name: 'Choir (Grades 7-12)' })).toBeVisible();
+    expect(await page.getByRole('button', { name: 'General Elementary Music (' })).toBeVisible();
+    expect(await page.getByRole('button', { name: 'Orchestra (Grades 5-12)' })).toBeVisible();
+    expect(await page.getByRole('button', { name: 'Theatre (Grades 7-12)' })).toBeVisible();
+    expect(await page.getByRole('button', { name: 'Visual Arts (Grades 7-12)' })).toBeVisible();
+    expect(await page.getByRole('button', { name: 'String Instrument Sizing Guide' })).toBeVisible();
+    expect(await page.getByRole('button', { name: 'Ted Brown Music Rentals' })).toBeVisible();
+    expect(await page.getByRole('button', { name: 'Music & Arts Rentals' })).toBeVisible();
+    expect(await page.getByRole('button', { name: 'Applebaum Violin Shop' })).toBeVisible();
+    expect(await page.getByRole('button', { name: 'Hammond Ashley Violins' })).toBeVisible();
+    await page.getByRole('button', { name: 'Hammond Ashley Violins' }).click();
+    expect(await page.getByText('970 5th Ave NW # 110,')).toBeVisible();
+    const page1Promise = page.waitForEvent('popup');
+    await page.getByRole('link', { name: 'Rental Instrumentals -' }).click();
+    const page1 = await page1Promise;
+    await expect(page1).toHaveURL("https://rentals.hammondashley.com/");
   });
 });
