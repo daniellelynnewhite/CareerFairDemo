@@ -15,6 +15,30 @@ test.describe('artsProgramPage', () => {
     await page.close();
   });
 
+  // TODO: Add this test
+  test.skip('goes to the Arts Program webpage - Validate Facebook Link', async ({ page }) => {
+    await page.getByRole('link', { name: 'Academic Programs' }).hover();
+    await page.getByRole('link', { name: 'Arts Program' }).click();
+    expect(await page.getByRole('heading', { name: 'Arts Program' })).toBeVisible();
+    expect(await page.getByRole('heading', { name: 'Vision Statement' })).toBeVisible();
+    expect(await page.getByRole('heading', { name: 'Follow Us on Social Media!' })).toBeVisible();
+    expect(await page.getByRole('heading', { name: 'Upcoming Events' })).toBeVisible();
+    expect(await page.getByRole('heading', { name: 'Arts Program' })).toBeVisible();
+    await page.pause()
+  });
+
+  // TODO: Add this test
+  test.skip('goes to the Arts Program webpage - Validate Instagram Link', async ({ page }) => {
+    await page.getByRole('link', { name: 'Academic Programs' }).hover();
+    await page.getByRole('link', { name: 'Arts Program' }).click();
+    expect(await page.getByRole('heading', { name: 'Arts Program' })).toBeVisible();
+    expect(await page.getByRole('heading', { name: 'Vision Statement' })).toBeVisible();
+    expect(await page.getByRole('heading', { name: 'Follow Us on Social Media!' })).toBeVisible();
+    expect(await page.getByRole('heading', { name: 'Upcoming Events' })).toBeVisible();
+    expect(await page.getByRole('heading', { name: 'Arts Program' })).toBeVisible();
+    await page.pause()
+  });
+
   test('goes to the Arts Program webpage - Validate Loads Event Calendar', async ({ page }) => {
     await page.getByRole('link', { name: 'Academic Programs' }).hover();
     await page.getByRole('link', { name: 'Arts Program' }).click();
