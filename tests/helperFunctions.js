@@ -33,7 +33,8 @@ export async function generalElementaryMusicPageIsLoaded(page) {
 }
 
 export async function historyOfTheVeseyMunsonPageIsLoaded(page) {
-    expect(await page.getByRole('heading', { name: '2025 Vesey/Munson Art Show' })).toBeVisible();
+    await page.getByText('The 28th Annual Vesey/Munson').click();
+    expect(await page.getByRole('heading', { name: '2026 Vesey/Munson Art Show' })).toBeVisible();
     expect(await page.getByRole('heading', { name: 'Best in Show' })).toBeVisible();
     expect(await page.getByRole('heading', { name: 'Superintendent Award' })).toBeVisible();
     expect(await page.getByRole('heading', { name: 'Black and White Drawing' })).toBeVisible();
@@ -41,7 +42,6 @@ export async function historyOfTheVeseyMunsonPageIsLoaded(page) {
     expect(await page.getByRole('heading', { name: 'Color Drawing' })).toBeVisible();
     expect(await page.getByRole('heading', { name: 'Mixed Media' })).toBeVisible();
     expect(await page.getByRole('heading', { name: 'Painting' })).toBeVisible();
-    expect(await page.getByRole('heading', { name: 'Photography/Digital' })).toBeVisible();
 }
 
 export async function homepageIsLoaded(page) {

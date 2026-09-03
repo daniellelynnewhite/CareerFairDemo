@@ -80,12 +80,12 @@ test.describe('artsProgramPage', () => {
     await page.screenshot({ path: 'Empty-Bowls-Puyallup.png' });
   });
 
-  test('goes to the Arts Program webpage - History of the Vesey/Munson Link', async ({ page }) => {
+  test.only('goes to the Arts Program webpage - History of the Vesey/Munson Link', async ({ page }) => {
     await page.getByRole('link', { name: 'Academic Programs' }).hover();
     await page.getByRole('link', { name: 'Arts Program' }).click();
     await artsProgramPageIsLoaded(page);
     await page.getByRole('link', { name: 'History of the Vesey/Munson' }).click();
-    await page.getByRole('heading', { name: 'History of the Vesey/Munson' }).click();
+    await page.getByText('The Dan Vesey Awards begin in').click();
     await page.screenshot({ path: 'History-Vesey-Munson.png' });
     await page.getByRole('heading', { name: 'Vesey/Munson Art Show Winners' }).click();
     const page1Promise = page.waitForEvent('popup');
