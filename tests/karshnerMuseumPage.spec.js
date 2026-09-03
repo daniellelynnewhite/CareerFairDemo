@@ -1,5 +1,5 @@
 import { test } from '@playwright/test';
-import { homepageIsLoaded } from './helperFunctions.js';
+import { homepageIsLoaded } from './helperFunctions/homepageHelperFunctions.js';
 
 // command to run: npx playwright test karshnerMuseumPage.spec.js
 // command to run with UI visible: npx playwright test karshnerMuseumPage.spec.js --debug

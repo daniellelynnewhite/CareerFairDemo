@@ -44,11 +44,6 @@ export async function historyOfTheVeseyMunsonPageIsLoaded(page) {
     expect(await page.getByRole('heading', { name: 'Painting' })).toBeVisible();
 }
 
-export async function homepageIsLoaded(page) {
-    await page.goto('https://www.puyallupsd.org/');
-    await validateHomepageTitle(page)
-}
-
 export async function musicTheatreAndVisualPageIsLoaded(page) {
     expect(await page.getByRole('heading', { name: 'Music, Theatre, and Visual' })).toBeVisible();
     expect(await page.getByRole('heading', { name: 'Overview' })).toBeVisible();
@@ -78,12 +73,6 @@ export async function orchestraGrades5To12PageIsLoaded(page) {
 
 export async function theatreGrades7To12PageIsLoaded(page) {
     expect(await page.getByText('PSD Drama classes foster')).toBeVisible();
-}
-
-export async function validateHomepageTitle(page) {
-    const title = await page.title();
-    expect(title).toBe('Home - Puyallup School District');
-    await page.waitForTimeout(2000);
 }
 
 export async function visualArtsGrades7To12PageIsLoaded(page) {
