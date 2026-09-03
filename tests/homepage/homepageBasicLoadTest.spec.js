@@ -1,8 +1,8 @@
 import { test } from '@playwright/test';
-import { homepageIsLoaded } from './helperFunctions/homepageHelperFunctions.js';
+import { homepageIsLoaded } from '../helperFunctions/homepageHelperFunctions.js';
 
-// command to run: npx playwright test homepage.spec.js
-// command to run with UI visible: npx playwright test homepage.spec.js --debug
+// command to run: npx playwright test homepageBasicLoadTest.spec.js
+// command to run with UI visible: npx playwright test homepageBasicLoadTest.spec.js --debug
 
 test.describe('homepage', () => {
   test.beforeEach('before test', async ({ page }) => {

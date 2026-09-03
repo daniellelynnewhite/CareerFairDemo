@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { homepageIsLoaded } from './helperFunctions/homepageHelperFunctions.js';
+import { homepageIsLoaded } from '../helperFunctions/homepageHelperFunctions.js';
 import { 
   artsProgramPageIsLoaded,
   historyOfTheVeseyMunsonPageIsLoaded,
@@ -10,7 +10,7 @@ import {
   orchestraGrades5To12PageIsLoaded,
   theatreGrades7To12PageIsLoaded,
   visualArtsGrades7To12PageIsLoaded
-} from './helperFunctions/artPageHelperFunctions.js';
+} from '../helperFunctions/artPageHelperFunctions.js';
 
 // command to run: npx playwright test artsProgramPage.spec.js
 // command to run with UI visible: npx playwright test artsProgramPage.spec.js --debug

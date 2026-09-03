@@ -1,9 +1,9 @@
 import { test, expect } from '@playwright/test';
-import { homepageIsLoaded } from './helperFunctions/homepageHelperFunctions.js';
+import { homepageIsLoaded } from '../helperFunctions/homepageHelperFunctions.js';
 import {
   inclementWeatherPageIsLoaded,
   searchHuntPageIsLoaded
- } from './helperFunctions/delaysAndClosuresPageHelperFunctions.js';
+ } from '../helperFunctions/delaysAndClosuresPageHelperFunctions.js';
 
 // command to run: npx playwright test delaysAndClosuresPage.spec.js
 // command to run with UI visible: npx playwright test delaysAndClosuresPage.spec.js --debug
