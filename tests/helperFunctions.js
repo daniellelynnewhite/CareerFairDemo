@@ -1,15 +1,7 @@
 import { expect } from '@playwright/test';
 
-export async function validateHomepageTitle(page) {
-    const title = await page.title();
-    expect(title).toBe('Home - Puyallup School District');
-    await page.waitForTimeout(2000);
-}
-
-export async function homepageIsLoaded(page) {
-    await page.goto('https://www.puyallupsd.org/');
-    await validateHomepageTitle(page)
-}
+// NOTE: Functions are listed in alphabetical order to make it easier to find them. 
+// Please keep them in alphabetical order when adding new functions.
 
 export async function artsProgramPageIsLoaded(page) {
     expect(await page.getByRole('heading', { name: 'Arts Program' })).toBeVisible();
@@ -17,37 +9,6 @@ export async function artsProgramPageIsLoaded(page) {
     expect(await page.getByRole('heading', { name: 'Follow Us on Social Media!' })).toBeVisible();
     expect(await page.getByRole('heading', { name: 'Upcoming Events' })).toBeVisible();
     expect(await page.getByRole('heading', { name: 'Arts Program' })).toBeVisible();
-}
-
-export async function historyOfTheVeseyMunsonPageIsLoaded(page) {
-    expect(await page.getByRole('heading', { name: '2025 Vesey/Munson Art Show' })).toBeVisible();
-    expect(await page.getByRole('heading', { name: 'Best in Show' })).toBeVisible();
-    expect(await page.getByRole('heading', { name: 'Superintendent Award' })).toBeVisible();
-    expect(await page.getByRole('heading', { name: 'Black and White Drawing' })).toBeVisible();
-    expect(await page.getByRole('heading', { name: 'Ceramics / 3D Art' })).toBeVisible();
-    expect(await page.getByRole('heading', { name: 'Color Drawing' })).toBeVisible();
-    expect(await page.getByRole('heading', { name: 'Mixed Media' })).toBeVisible();
-    expect(await page.getByRole('heading', { name: 'Painting' })).toBeVisible();
-    expect(await page.getByRole('heading', { name: 'Photography/Digital' })).toBeVisible();
-}
-
-export async function musicTheatreAndVisualPageIsLoaded(page) {
-    expect(await page.getByRole('heading', { name: 'Music, Theatre, and Visual' })).toBeVisible();
-    expect(await page.getByRole('heading', { name: 'Overview' })).toBeVisible();
-    expect(await page.getByText('Programs Across the District')).toBeVisible();
-    expect(await page.getByText('Instrument Rentals')).toBeVisible();
-    expect(await page.getByRole('heading', { name: 'Resources' })).toBeVisible();
-    expect(await page.getByRole('button', { name: 'Band (Grades 5-12)' })).toBeVisible();
-    expect(await page.getByRole('button', { name: 'Choir (Grades 7-12)' })).toBeVisible();
-    expect(await page.getByRole('button', { name: 'General Elementary Music (' })).toBeVisible();
-    expect(await page.getByRole('button', { name: 'Orchestra (Grades 5-12)' })).toBeVisible();
-    expect(await page.getByRole('button', { name: 'Theatre (Grades 7-12)' })).toBeVisible();
-    expect(await page.getByRole('button', { name: 'Visual Arts (Grades 7-12)' })).toBeVisible();
-    expect(await page.getByRole('button', { name: 'String Instrument Sizing Guide' })).toBeVisible();
-    expect(await page.getByRole('button', { name: 'Ted Brown Music Rentals' })).toBeVisible();
-    expect(await page.getByRole('button', { name: 'Music & Arts Rentals' })).toBeVisible();
-    expect(await page.getByRole('button', { name: 'Applebaum Violin Shop' })).toBeVisible();
-    expect(await page.getByRole('button', { name: 'Hammond Ashley Violins' })).toBeVisible();
 }
 
 export async function bandGrades5To12PageIsLoaded(page) {
@@ -71,6 +32,42 @@ export async function generalElementaryMusicPageIsLoaded(page) {
     expect(await page.getByText('Assessment & Formative Tools:')).toBeVisible();
 }
 
+export async function historyOfTheVeseyMunsonPageIsLoaded(page) {
+    expect(await page.getByRole('heading', { name: '2025 Vesey/Munson Art Show' })).toBeVisible();
+    expect(await page.getByRole('heading', { name: 'Best in Show' })).toBeVisible();
+    expect(await page.getByRole('heading', { name: 'Superintendent Award' })).toBeVisible();
+    expect(await page.getByRole('heading', { name: 'Black and White Drawing' })).toBeVisible();
+    expect(await page.getByRole('heading', { name: 'Ceramics / 3D Art' })).toBeVisible();
+    expect(await page.getByRole('heading', { name: 'Color Drawing' })).toBeVisible();
+    expect(await page.getByRole('heading', { name: 'Mixed Media' })).toBeVisible();
+    expect(await page.getByRole('heading', { name: 'Painting' })).toBeVisible();
+    expect(await page.getByRole('heading', { name: 'Photography/Digital' })).toBeVisible();
+}
+
+export async function homepageIsLoaded(page) {
+    await page.goto('https://www.puyallupsd.org/');
+    await validateHomepageTitle(page)
+}
+
+export async function musicTheatreAndVisualPageIsLoaded(page) {
+    expect(await page.getByRole('heading', { name: 'Music, Theatre, and Visual' })).toBeVisible();
+    expect(await page.getByRole('heading', { name: 'Overview' })).toBeVisible();
+    expect(await page.getByText('Programs Across the District')).toBeVisible();
+    expect(await page.getByText('Instrument Rentals')).toBeVisible();
+    expect(await page.getByRole('heading', { name: 'Resources' })).toBeVisible();
+    expect(await page.getByRole('button', { name: 'Band (Grades 5-12)' })).toBeVisible();
+    expect(await page.getByRole('button', { name: 'Choir (Grades 7-12)' })).toBeVisible();
+    expect(await page.getByRole('button', { name: 'General Elementary Music (' })).toBeVisible();
+    expect(await page.getByRole('button', { name: 'Orchestra (Grades 5-12)' })).toBeVisible();
+    expect(await page.getByRole('button', { name: 'Theatre (Grades 7-12)' })).toBeVisible();
+    expect(await page.getByRole('button', { name: 'Visual Arts (Grades 7-12)' })).toBeVisible();
+    expect(await page.getByRole('button', { name: 'String Instrument Sizing Guide' })).toBeVisible();
+    expect(await page.getByRole('button', { name: 'Ted Brown Music Rentals' })).toBeVisible();
+    expect(await page.getByRole('button', { name: 'Music & Arts Rentals' })).toBeVisible();
+    expect(await page.getByRole('button', { name: 'Applebaum Violin Shop' })).toBeVisible();
+    expect(await page.getByRole('button', { name: 'Hammond Ashley Violins' })).toBeVisible();
+}
+
 export async function orchestraGrades5To12PageIsLoaded(page) {
     expect(await page.getByText('Watch out orchestra')).toBeVisible();
     expect(await page.getByText('Bass', { exact: true })).toBeVisible();
@@ -81,6 +78,12 @@ export async function orchestraGrades5To12PageIsLoaded(page) {
 
 export async function theatreGrades7To12PageIsLoaded(page) {
     expect(await page.getByText('PSD Drama classes foster')).toBeVisible();
+}
+
+export async function validateHomepageTitle(page) {
+    const title = await page.title();
+    expect(title).toBe('Home - Puyallup School District');
+    await page.waitForTimeout(2000);
 }
 
 export async function visualArtsGrades7To12PageIsLoaded(page) {
