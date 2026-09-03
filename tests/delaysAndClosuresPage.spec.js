@@ -3,7 +3,7 @@ import { homepageIsLoaded } from './helperFunctions/homepageHelperFunctions.js';
 import {
   inclementWeatherPageIsLoaded,
   searchHuntPageIsLoaded
- } from './helperFunctions/delaysAndClosuresPage.js';
+ } from './helperFunctions/delaysAndClosuresPageHelperFunctions.js';
 
 // command to run: npx playwright test delaysAndClosuresPage.spec.js
 // command to run with UI visible: npx playwright test delaysAndClosuresPage.spec.js --debug
