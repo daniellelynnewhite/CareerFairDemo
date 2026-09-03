@@ -1,0 +1,23 @@
+{
+  "name": "careerfairdemo",
+  "version": "1.0.0",
+  "description": "A quick demo of automating tests for the Hunt Elementary School Website for the Career Fair",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daniellelynnewhite/CareerFairDemo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/daniellelynnewhite/CareerFairDemo/issues"
+  },
+  "homepage": "https://github.com/daniellelynnewhite/CareerFairDemo#readme"
+}
