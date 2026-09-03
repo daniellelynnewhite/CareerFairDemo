@@ -80,7 +80,7 @@ test.describe('artsProgramPage', () => {
     await page.screenshot({ path: 'Empty-Bowls-Puyallup.png' });
   });
 
-  test.only('goes to the Arts Program webpage - History of the Vesey/Munson Link', async ({ page }) => {
+  test('goes to the Arts Program webpage - History of the Vesey/Munson Link', async ({ page }) => {
     await page.getByRole('link', { name: 'Academic Programs' }).hover();
     await page.getByRole('link', { name: 'Arts Program' }).click();
     await artsProgramPageIsLoaded(page);
