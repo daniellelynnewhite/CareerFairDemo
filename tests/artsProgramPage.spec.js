@@ -10,7 +10,7 @@ import {
   orchestraGrades5To12PageIsLoaded,
   theatreGrades7To12PageIsLoaded,
   visualArtsGrades7To12PageIsLoaded
- } from './helperFunctions.js';
+} from './helperFunctions.js';
 
 // command to run: npx playwright test artsProgramPage.spec.js
 // command to run with UI visible: npx playwright test artsProgramPage.spec.js --debug
