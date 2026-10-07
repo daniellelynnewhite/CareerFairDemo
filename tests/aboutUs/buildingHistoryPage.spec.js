@@ -5,6 +5,8 @@ import { buildingHistoryPageIsLoaded, goToBuildingHistoryPage } from '../helperF
 // command to run: npx playwright test buildingHistoryPage.spec.js
 // command to run with UI visible: npx playwright test buildingHistoryPage.spec.js --debug
 
+// TODO: Add Tests for the Other Buildings Listed on the Building History Page
+
 test.describe('buildingHistoryPage', () => {
   test.beforeEach('before test', async ({ page }) => {
     await homepageIsLoaded(page);
