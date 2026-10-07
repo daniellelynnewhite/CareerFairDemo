@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test';
 import { homepageIsLoaded } from '../helperFunctions/homepageHelperFunctions.js';
+import { goToCalendarsAndBellSchedulesPage, calendarsAndBellSchedulesPageIsLoaded } from '../helperFunctions/calendarsAndBellSchedulesPAgeHelperFunctions.js';
 
 // command to run: npx playwright test calendarsAndBellSchedulesPage.spec.js
 // command to run with UI visible: npx playwright test calendarsAndBellSchedulesPage.spec.js --debug
@@ -16,6 +17,7 @@ test.describe('calendarsAndBellSchedules', () => {
     });
 
     test('goes to Calendars and Bell Schedules Page', async ({ page }) => {
-        // add tests here
+        await goToCalendarsAndBellSchedulesPage(page);
+        await calendarsAndBellSchedulesPageIsLoaded(page);
     });
 });
