@@ -8,3 +8,9 @@ export async function buildingHistoryPageIsLoaded(page) {
     expect(await page.getByRole('button', { name: 'Brouillet Elementary School' })).toBeVisible();
     expect(await page.getByText('17207 94th Avenue East')).toBeVisible();
 }
+
+export async function goToBuildingHistoryPage(page) {
+    await page.getByRole('link', { name: 'About Us' }).hover();
+    await page.getByLabel('Main', { exact: true }).getByText('Building History').click();
+    await page.waitForTimeout(2000);
+}
