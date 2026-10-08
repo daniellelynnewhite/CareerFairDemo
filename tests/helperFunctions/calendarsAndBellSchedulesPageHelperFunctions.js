@@ -9,6 +9,13 @@ export async function calendarsAndBellSchedulesPageIsLoaded(page) {
     expect(await page.getByRole('heading', { name: 'Puyallup School District Key' })).toBeVisible();
 }
 
+export async function clickSchoolBellSchedulesLink(page) {
+    await page.getByRole('link', { name: 'School Bell Schedules' }).click();
+    expect(await page.getByRole('heading', { name: 'School Bell Schedules' })).toBeVisible();
+    expect(await page.getByRole('heading', { name: 'Overview' })).toBeVisible();
+    expect(await page.getByText('Below times are the exact')).toBeVisible();
+}
+
 export async function goToCalendarsAndBellSchedulesPage(page) {
     await page.getByRole('link', { name: 'About Us' }).hover();
     await page.getByLabel('Main', { exact: true }).getByRole('link', { name: 'Calendars and Bell Schedules' }).click();
