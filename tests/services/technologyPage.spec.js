@@ -19,7 +19,7 @@ test.describe('technologyPage', () => {
     await page.getByLabel('main').getByText('Technology(opens in new').click();
     const page1 = await page1Promise;
     await page1.getByText('Read More about Cybersecurity').click();
-    await page1.screenshot({ path: 'Cybersecurity.png' });
+    await page1.screenshot({ path: '/tests/screenshots/Cybersecurity.png' });
     await page1.getByRole('button', { name: 'Close' }).click();
   });
 
@@ -32,7 +32,7 @@ test.describe('technologyPage', () => {
     const page1 = await page1Promise;
     await page1.getByText('Read More about Cybersecurity').click();
     await page1.waitForTimeout(2000);
-    await page1.screenshot({ path: 'Cybersecurity.png' });
+    await page1.screenshot({ path: '/tests/screenshots/Cybersecurity.png' });
     await page1.getByRole('button', { name: 'Close' }).click();
   });
 });

@@ -71,7 +71,7 @@ test.describe('delaysAndClosuresPage', () => {
     expect(await page.getByRole('link', { name: 'Hunt Elementary - 420' })).toBeVisible();
     await page.getByRole('link', { name: 'Hunt Elementary - 420' }).click();
     await page.waitForTimeout(3000);
-    await page.screenshot({ path: 'Bus-Route-420.png' });
+    await page.screenshot({ path: '/tests/screenshots/Bus-Route-420.png' });
   });
 
   test('goes to Delays and Closures Info Page - Click Facebook Link', async ({ page }) => {
@@ -82,7 +82,7 @@ test.describe('delaysAndClosuresPage', () => {
     await page.getByRole('link', { name: 'Facebook' }).click();
     const page1 = await page1Promise;
     await page1.getByText('See more from Puyallup School').first().click();
-    await page1.screenshot({ path: 'Facebook-Login.png' });
+    await page1.screenshot({ path: '/tests/screenshots/Facebook-Login.png' });
     await page1.getByRole('button', { name: 'Close' }).click();
   });
 
@@ -95,7 +95,7 @@ test.describe('delaysAndClosuresPage', () => {
     await page.getByRole('link', { name: 'Instagram' }).click();
     const page1 = await page1Promise;
     await page1.getByText('See more from').click();
-    await page1.screenshot({ path: 'Instagram-Login.png' });
+    await page1.screenshot({ path: '/tests/screenshots/Instagram-Login.png' });
     await page1.getByRole('button', { name: 'Close' }).click();
   });
 

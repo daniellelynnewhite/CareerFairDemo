@@ -48,7 +48,7 @@ test.describe('artsProgramPage', () => {
     await page.getByRole('link', { name: 'View More Events' }).click();
     const page1 = await page1Promise;
     await page1.getByRole('heading', { name: 'The ARTS in Puyallup: LIVE!' }).click();
-    await page1.screenshot({ path: 'Hunt-Elementary-Art-Schedule.png' });
+    await page1.screenshot({ path: '/tests/screenshots/Hunt-Elementary-Art-Schedule.png' });
   });
 
   test('goes to the Arts Program webpage - Validate Loads Event Calendar - Slow for children to see each step', async ({ page }) => {
@@ -64,7 +64,7 @@ test.describe('artsProgramPage', () => {
     await page1.getByRole('heading', { name: 'The ARTS in Puyallup: LIVE!' }).click();
     await page.waitForTimeout(2000);
     // TODO: Change validation to something else that isn't a screenshot because the calendar changes each month
-    // await page1.screenshot({ path: 'Hunt-Elementary-Art-Schedule.png' });
+    // await page1.screenshot({ path: '/tests/screenshots/Hunt-Elementary-Art-Schedule.png' });
   });
 
   test('goes to the Arts Program webpage - Empty Bowls Link', async ({ page }) => {
@@ -77,7 +77,7 @@ test.describe('artsProgramPage', () => {
     await page.getByRole('heading', { name: 'Background' }).click();
     await page.getByRole('heading', { name: 'Empty Bowls in the Puyallup' }).click();
     await page.waitForTimeout(2000);
-    await page.screenshot({ path: 'Empty-Bowls-Puyallup.png' });
+    await page.screenshot({ path: '/tests/screenshots/Empty-Bowls-Puyallup.png' });
   });
 
   test('goes to the Arts Program webpage - History of the Vesey/Munson Link', async ({ page }) => {
@@ -86,7 +86,7 @@ test.describe('artsProgramPage', () => {
     await artsProgramPageIsLoaded(page);
     await page.getByRole('link', { name: 'History of the Vesey/Munson' }).click();
     await page.getByText('The Dan Vesey Awards begin in').click();
-    await page.screenshot({ path: 'History-Vesey-Munson.png' });
+    await page.screenshot({ path: '/tests/screenshots/History-Vesey-Munson.png' });
     await page.getByRole('heading', { name: 'Vesey/Munson Art Show Winners' }).click();
     const page1Promise = page.waitForEvent('popup');
     await page.getByRole('link', { name: 'Learn More and View the' }).click();
@@ -184,16 +184,16 @@ test.describe('artsProgramPage', () => {
     await page.getByRole('button', { name: 'String Instrument Sizing Guide' }).click();
     const firstTable = await page.locator('//div[contains(@class, "table-overflow")]').first();
     expect(firstTable).toBeVisible();
-    await firstTable.screenshot({ path: 'string-instrument-sizing-guide-first-table.png' });
+    await firstTable.screenshot({ path: '/tests/screenshots/string-instrument-sizing-guide-first-table.png' });
     const secondTable = await page.locator('//div[contains(@class, "table-overflow")]').nth(1);
     expect(secondTable).toBeVisible();
-    await secondTable.screenshot({ path: 'string-instrument-sizing-guide-second-table.png' });
+    await secondTable.screenshot({ path: '/tests/screenshots/string-instrument-sizing-guide-second-table.png' });
     const thirdTable = await page.locator('//div[contains(@class, "table-overflow")]').nth(2);
     expect(thirdTable).toBeVisible();
-    await thirdTable.screenshot({ path: 'string-instrument-sizing-guide-third-table.png' });
+    await thirdTable.screenshot({ path: '/tests/screenshots/string-instrument-sizing-guide-third-table.png' });
     const fourthTable = await page.locator('//div[contains(@class, "table-overflow")]').nth(3);
     expect(fourthTable).toBeVisible();
-    await fourthTable.screenshot({ path: 'string-instrument-sizing-guide-fourth-table.png' });
+    await fourthTable.screenshot({ path: '/tests/screenshots/string-instrument-sizing-guide-fourth-table.png' });
   });
 
   test('goes to the Arts Program webpage - Music, Theatre, and Visual Link Loads - Ted Brown Music Rentals', async ({ page }) => {

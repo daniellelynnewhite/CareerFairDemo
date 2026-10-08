@@ -14,6 +14,6 @@ test.describe('homepage', () => {
   });
 
   test('screenshot of the homepage', async ({ page }) => {
-    await page.screenshot({ path: 'puyallup-homepage.png' });
+    await page.screenshot({ path: '/tests/screenshots/puyallup-homepage.png' });
   });
 });

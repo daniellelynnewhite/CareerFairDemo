@@ -16,10 +16,10 @@ test.describe('karshnerMuseumPage', () => {
   test('goes to Karshner Museum webpage', async ({ page }) => {
     await page.getByRole('link', { name: 'Community ' }).hover();
     await page.getByRole('link', { name: 'Karshner Museum' }).click();
-    await page.screenshot({ path: 'Karshner-Museum-homepage.png' });
+    await page.screenshot({ path: '/tests/screenshots/Karshner-Museum-homepage.png' });
     await page.getByRole('link', { name: 'Exhibits', exact: true }).hover();
     await page.getByRole('link', { name: 'From the Salish Sea to Mt.' }).click();
-    await page.screenshot({ path: 'Karshner-Museum-salish-sea.png' });
+    await page.screenshot({ path: '/tests/screenshots/Karshner-Museum-salish-sea.png' });
   });
 
   test('goes to Karshner Museum webpage - Slow for children to see each step', async ({ page }) => {
@@ -27,11 +27,11 @@ test.describe('karshnerMuseumPage', () => {
     await page.waitForTimeout(1000);
     await page.getByRole('link', { name: 'Karshner Museum' }).click();
     await page.waitForTimeout(2000);
-    await page.screenshot({ path: 'Karshner-Museum-homepage.png' });
+    await page.screenshot({ path: '/tests/screenshots/Karshner-Museum-homepage.png' });
     await page.getByRole('link', { name: 'Exhibits', exact: true }).hover();
     await page.waitForTimeout(1000);
     await page.getByRole('link', { name: 'From the Salish Sea to Mt.' }).click();
     await page.waitForTimeout(2000);
-    await page.screenshot({ path: 'Karshner-Museum-salish-sea.png' });
+    await page.screenshot({ path: '/tests/screenshots/Karshner-Museum-salish-sea.png' });
   });
 });
